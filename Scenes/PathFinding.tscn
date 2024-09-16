@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkguveydw0bhe"]
+
+[ext_resource type="Script" path="res://Scripts/PathFinding.cs" id="1_ko35u"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+script = ExtResource("1_ko35u")
