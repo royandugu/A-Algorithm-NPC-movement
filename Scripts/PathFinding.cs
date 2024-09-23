@@ -8,6 +8,7 @@ public partial class PathFinding : TileMapLayer
 	private int mainSource=0;
 	private Vector2I pathTakenAtlasCords=new Vector2I(0,8);
 
+	private string isObstacle="isObstacle";
 	public override void _Ready()
 	{   
 		SetGrid();
@@ -19,12 +20,21 @@ public partial class PathFinding : TileMapLayer
 		aStarGrid2D.Region = new Rect2I(0,0,7,6);
 		aStarGrid2D.CellSize = new Vector2I(16,16);
 		aStarGrid2D.Update();
+		foreach(var cell in GetUsedCells()){
+			aStarGrid2D.SetPointSolid(cell,IsSpotSolid(cell));
+		}
 	}
 
 	public void ShowGrid(){
-		var pathTaken = aStarGrid2D.GetIdPath(new Vector2I(0,0),new Vector2I(4,0));
+		var pathTaken = aStarGrid2D.GetIdPath(new Vector2I(0,0),new Vector2I(10,3));
 		foreach(var cell in pathTaken){
 			SetCell(mainLayer, mainSource, pathTakenAtlasCords);
 		}
+	}
+
+	public bool IsSpotSolid(Vector2I spotToCheck){
+		var result= GetCellTileData(spotToCheck).GetCustomData(isObstacle);
+		if((bool)result) return true;
+		else return false;
 	}
 }
