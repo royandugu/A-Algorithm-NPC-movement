@@ -17,7 +17,7 @@ public partial class PathFinding : TileMapLayer
 
 	public void SetGrid(){
 		aStarGrid2D = new AStarGrid2D();
-		aStarGrid2D.Region = new Rect2I(0,0,7,6);
+		aStarGrid2D.Region = new Rect2I(0,0,5,5);
 		aStarGrid2D.CellSize = new Vector2I(16,16);
 		aStarGrid2D.Update();
 		foreach(var cell in GetUsedCells()){
@@ -26,9 +26,9 @@ public partial class PathFinding : TileMapLayer
 	}
 
 	public void ShowGrid(){
-		var pathTaken = aStarGrid2D.GetIdPath(new Vector2I(0,0),new Vector2I(10,3));
+		var pathTaken = aStarGrid2D.GetIdPath(new Vector2I(0,0),new Vector2I(5,3));
 		foreach(var cell in pathTaken){
-			SetCell(mainLayer, mainSource, pathTakenAtlasCords);
+			SetCell(new Vector2I(0,0), mainSource, pathTakenAtlasCords);
 		}
 	}
 

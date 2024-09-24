@@ -10,3 +10,9 @@ The current Tileset that I kept as a barrier is the tile on the well on the left
 
 ## Error 1 study
 Points are out of bounds error even though the points seem to exist on the Grid.
+
+
+## Trial 2 
+
+(4,6) in our Atlas TileSets is going to be the co-ordinates for the walkable on the Tile
+(2,3) in our Atlas TileSets is going to be the obstacle.
