@@ -1,0 +1,2 @@
+## Player movement logic in Tilemap.
+ -- When the player moves first we get the current tile. How do we get it ? We convert the global position into the position in the tile ki tile ko kun chain position mah player hidirako xa. This can be done by TileMap.LocalToMap(GlobalPosition)
