@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=4 uid="uid://bkguveydw0bhe"]
+[gd_scene load_steps=8 format=4 uid="uid://bkguveydw0bhe"]
 
 [ext_resource type="Texture2D" uid="uid://d27bwd2qpchv4" path="res://Assets/TileSets/kenney_tiny-dungeon/Sample.png" id="1_aopg8"]
 [ext_resource type="Script" path="res://Scripts/Player/Player.cs" id="2_yhjb8"]
+[ext_resource type="Script" path="res://Scripts/Enemy/Enemy.cs" id="3_nqx1r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5r0bp"]
 texture = ExtResource("1_aopg8")
@@ -1858,6 +1859,10 @@ sources/0 = SubResource("TileSetAtlasSource_5r0bp")
 atlas = ExtResource("1_aopg8")
 region = Rect2(416, 224, 48, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7p10"]
+atlas = ExtResource("1_aopg8")
+region = Rect2(240, 192, 16, 16)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -1871,3 +1876,10 @@ script = ExtResource("2_yhjb8")
 texture = SubResource("AtlasTexture_r3n5x")
 
 [node name="Camera2D" type="Camera2D" parent="Player/Sprite2D"]
+
+[node name="NPC" type="Node2D" parent="."]
+script = ExtResource("3_nqx1r")
+
+[node name="Sprite2D" type="Sprite2D" parent="NPC"]
+position = Vector2(39, 27)
+texture = SubResource("AtlasTexture_k7p10")
