@@ -1,0 +1,2 @@
+## Enemny movement
+Right now we are basically applying the algorithm of enemy running after the player but what we truly want is enemy avoiding the player (cause it's going to be NPC in our game). So initially AStarGrid lai initialize garepaxi tesma diffrent values haru hamile set garna milxa. Like cell sizes and we can set that we should not have any diagnol movements. After setting all these vaues then we use Update() to update the values set from defaults.
