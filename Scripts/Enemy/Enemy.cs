@@ -10,8 +10,10 @@ public partial class Enemy:Node2D{
         aStarGrid2D.CellSize = new Vector2I(16,16);
         aStarGrid2D.Update();
 
-        regionSize = aStarGrid2D.Region.Size;
-        regionPosition = aStarGrid2D.Region.Position;
+        var regionSizeRough = aStarGrid2D.Region.Size;
+        var regionPositionRough = aStarGrid2D.Region.Position;
+        var tilePositionFare = new Vector2I(regionSizeRough.X + regionPositionRough.X, regionSizeRough.Y + regionPositionRough.Y);
+
     }
     public override void _Process(double delta){
 

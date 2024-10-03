@@ -1,2 +1,6 @@
 ## Enemny movement
 Right now we are basically applying the algorithm of enemy running after the player but what we truly want is enemy avoiding the player (cause it's going to be NPC in our game). So initially AStarGrid lai initialize garepaxi tesma diffrent values haru hamile set garna milxa. Like cell sizes and we can set that we should not have any diagnol movements. After setting all these vaues then we use Update() to update the values set from defaults.
+
+We get the regionSize and then we get the regionPosition. With the help of these two, we get the TilePosition that is new Vector2I(regionSize.X+regionPosition.X, ....same). Now on this TilePosition, I check if it is walkable or not.
+
+-- As per my understanding, what we are doing is we are extracting the size of our AStarGrid2D this means that the width of our AStarGrid2D and height of our AStarGrid2D. Then we extract the initial position of our AStarGrid2D. What we do is we add the initial position of our AStarGrid2D with the size that is the height and width of our AStarGrid2D. All I know for now is this point gives the end of our AStarGrid2D. 
