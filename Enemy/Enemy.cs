@@ -21,14 +21,19 @@ public partial class Enemy : Node2D
             for(int j=0; j<regionSizeRough.Y;j++){
                 var tilePosition = new Vector2I(i+regionPosition.X, j+regionPosition.Y);
                 var tileData= tileMapLayer.GetCellTileData(tilePosition);
-                GD.Print(tileData);
-
+                if(tileData == null && !(bool)tileData.GetCustomData("walkables")){
+                    aStarGrid2D.SetPointSolid(tilePosition);
+                }
             }
         }
 
     }
     public override void _Process(double delta)
     {
+        Move();
+    }
 
+    public void Move(){
+        // var path = aStarGrid2D.GetIdPath();
     }
 }
