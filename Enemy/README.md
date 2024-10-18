@@ -28,4 +28,14 @@ Now to move the spirte what the tutorial dude does is that initially the spirte'
 
 Now euta variable xa isMoving. Now when the enemey reaches the destination then the GlobalPosition of the Node becomes equal to the GlobalPosition of the sprite. At such moment the isMoving is set to false. When isMoving is set false then no operation takes place.
 
-Basically Node pahila nai destination mah pugxa vane Sprite bistarai one one step gardai destination tira hidxa.
+Basically Node laii pani first of the path mah naii move garxa but hamro sprite chain eutai position mah hunxa.
+
+Now with Process function and PhysicsProcess function we have Process function that is called for every single frame rate while we have a PhysicsProcess function that is called for a certain interval all the time. But why is Sprite moved on PhysicsProcess and the Node moved on Process. Well all of this comes down to seperation of concerns. The actual path finding logic is on the process so node is moved on the process while to make the movement (visual movement) more predictable and since it can contain animations we do it in PhysicsProcess that is related to the Physics of the engine. This results to a smooth movement and avoids any jittering. 
+
+So how the entire thing works : 
+Inside of the process function the entire path is calculated as per every single frame. And then the node moves by a single path. So, suppose our path is given in  the first frame as 
+[(0,0),(0,1),(0,2)]
+it's length is greater than 1 therefore 0,0 is popped
+and then the sprite is moved to (0,0) while the entire node moves to (0,1)
+At this moment if the physicsProcess function is called then it moves the Sprite to (0,1), however before the physicsProcess function is called, if the process function itself is called then what happens ? 
+So right during the next frame suppose the path changes [(1,2),(1,3),(1,4)], then at this moment the sprite that was at (0,0) will be set to (1,2). Isn't this an error case ? 
