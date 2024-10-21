@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using Godot;
 public partial class Enemy : Node2D
 {
