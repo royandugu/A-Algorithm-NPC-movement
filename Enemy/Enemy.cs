@@ -13,12 +13,12 @@ public partial class Enemy : Node2D
 	{
 		isMoving=true;
 		aStarGrid2D = new AStarGrid2D();
+		aStarGrid2D.Region = new Rect2I(-5, -5, 9, 9);
 		tileMapLayer = GetNode<TileMapLayer>("/root/Node2D/TileMapLayer");
 		aStarGrid2D.CellSize = new Vector2I(16, 16);
 		aStarGrid2D.Update();
 
 		var regionSizeRough = aStarGrid2D.Region.Size;
-		var regionPositionRough = aStarGrid2D.Region.Position; //Starting position of our AStarGrid2D
 
 		for (int i = 0; i < regionSizeRough.X; i++)
 		{
@@ -47,7 +47,6 @@ public partial class Enemy : Node2D
 			path.RemoveAt(0);
 		}
 		else{
-			GD.Print("Cannot find the path");
 			return;
 		}
 

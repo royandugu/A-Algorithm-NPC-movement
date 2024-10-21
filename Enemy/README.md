@@ -39,3 +39,8 @@ it's length is greater than 1 therefore 0,0 is popped
 and then the sprite is moved to (0,0) while the entire node moves to (0,1)
 At this moment if the physicsProcess function is called then it moves the Sprite to (0,1), however before the physicsProcess function is called, if the process function itself is called then what happens ? 
 So right during the next frame suppose the path changes [(1,2),(1,3),(1,4)], then at this moment the sprite that was at (0,0) will be set to (1,2). Isn't this an error case ? 
+
+
+## End notes
+To view this thing, view it as we have a tilemap and we have an AStarGrid2D, totally unrelated. However we try to match the starting point, the height and the width of these two. Now using the tile co-oridates of AStarGrid2D we see that is the exact tile co-ordinate in the TileMap movable? If it is not movable then we simply set that point in AStarGrid2D as a solid non walkable. Basically what is happening is that our player moves as per the AStarGrid2D tile co-ordinates and it's output is seen on the tilemap because tetai ko points eta ko points sanga match garxa. 
+Give it a mix of tilemaps and individually created textures and then what you want to do is you put your texture over the tilemap right and then you make that tilemap region solid. That's it. 
