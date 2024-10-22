@@ -10,3 +10,6 @@ Now we use Nine patch rect to keep our dialog box texture as the background. Why
 Now we need to add a Timer Node to it and there in the inspector we need to tick one shot. Why? This is because this Timer means that it will run once and then start, loop mah run hudaina. 
 
 ## Also see the tutorial for Dialog box by developer Exra (Can be a helpful tool to use)
+Whenever you want to add any plugins, they are stored in the addons folder. For the plugin by ezra we can simply bring the plugin from the git repo and put it in the addons folder. Once you do that go to project > project settings > plugin and there we will se ezra's plugin. We can tick it enabled and as soon as we enable it we will see a Ez Dialog tab that appears beside those 2D, 3D and all that. 
+
+Now another Node called the VBoxContainer: A VBoxContainer automatically stacks it's child nodes vertically in linear layout. The need to manually adjust positions is no more. 
