@@ -1,0 +1,1 @@
+So what we just did is add the buttons to our Vbox contanier from the GUI but now we are going to create a new scene and add a button into that scene and then add buttons by adding child to it rather than directly adding from the GUI.
