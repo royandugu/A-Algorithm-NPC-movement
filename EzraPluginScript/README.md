@@ -13,3 +13,5 @@ How does ChoiceIndex work?
 Basically harek euta choiceButton jun create hunxa ni, tyo ChoiceButton sanga euta EzraChoiceButton script attached hunxa, ra harek script mah choiceIndex vanne euta variable xa. Now while adding choices, what we do is that we maintain an array. Suppose we add our first choice button. Then tyo first choice button mah vayeko script ko choiceIndex value tyo array ko length ho ni taw. So first choice button has an index 0. Then tespaxi we add another choiceButton. Tyo array ko length is now 1 so second choice button ko script mah we assign 1. So this way, kun chain choice select gareko hau vanera hamile thaha pauna sakxau.
 
 ## On the GUI 
+
+New thichera first node create garna milyo ra teskai side ko pop up mah node ko name change garna milxa ra node mah contents haru rakhna milxa. Then we need to add choices, so to add a choice we do ?> this means we are going to add a prompt. ?> Choice one -> NodeName. Now when we create two nodes and then add this prompt in one of the node GUI mah euta line dekhna sakinxa from that node to the node's name we give it on the prompt. Esari choice create garna sakinxa
