@@ -19,7 +19,11 @@ public partial class EzraDialog:Node2D{
     public void AddChoice(){
         EzraChoiceButton buttonObj = (EzraChoiceButton) buttonScene.Instantiate();
         buttonObj.ChoiceIndex=buttons.Count;
+        
         buttons.Add(buttonObj);
         vBoxContainer.AddChild(buttonObj);
+    }
+
+    public void OnChoiceSelected(){
     }
 }
