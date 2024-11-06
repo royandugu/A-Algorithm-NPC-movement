@@ -15,3 +15,7 @@ Basically harek euta choiceButton jun create hunxa ni, tyo ChoiceButton sanga eu
 ## On the GUI 
 
 New thichera first node create garna milyo ra teskai side ko pop up mah node ko name change garna milxa ra node mah contents haru rakhna milxa. Then we need to add choices, so to add a choice we do ?> this means we are going to add a prompt. ?> Choice one -> NodeName. Now when we create two nodes and then add this prompt in one of the node GUI mah euta line dekhna sakinxa from that node to the node's name we give it on the prompt. Esari choice create garna sakinxa
+
+Now hamro EZ Dialog ko euta node pani xa ra tyo node mah hami hamro JSON provide garxau ra tesko signal sanga connect garera we work it.
+
+Now we created a function named DialogGenerated and just so we know what we did was that on that DialogGenerated we get an argument called response which is of type DialogResponse. Now DialogResponse has two things, one being the Text and another being Choices. Text being string and choices being the array of string. 
